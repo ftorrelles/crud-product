@@ -6,3 +6,22 @@
     box-sizing: border-box;
     font-family: "Nunito", sans-serif;
 }
+body {
+    background-color: #ffffff;
+}
+.PrincipalContainer {
+    background-color: #525e75;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.PrincipalContainer .textStock {
+    display: flex;
+    align-items: center;
+}
+.PrincipalContainer .principalForm {
+    padding: 1rem;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 5px;
+}

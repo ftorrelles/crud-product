@@ -18,8 +18,9 @@ const ProductsForm = ({
         return { name: null, category: null, price: null, isAvailable: false };
     };
     return (
-        <div>
-            <form onSubmit={handleSubmit(submit)}>
+        <div className="PrincipalContainer">
+            <h3 className="textStock">Administar productos</h3>
+            <form className="principalForm" onSubmit={handleSubmit(submit)}>
                 <div className="contentForm">
                     <label htmlFor="product_name">Name</label>
                     <input

@@ -58,15 +58,20 @@ function App() {
             />
             <hr />
             <br />
+            <ProductsList
+                dataApi={dataProducts}
+                deleteProduct={(id) => deleteProduct(id)}
+                editProduct={(dataProduct) => editProduct(dataProduct)}
+            />
 
-            {dataProducts.map((product, index) => (
+            {/* {dataProducts.map((product, index) => (
                 <ProductsList
                     dataApi={product}
                     key={index}
                     deleteProduct={(id) => deleteProduct(id)}
                     editProduct={(dataProduct) => editProduct(dataProduct)}
                 />
-            ))}
+            ))} */}
         </div>
     );
 }

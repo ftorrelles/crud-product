@@ -1,5 +1,4 @@
 const ProductsList = ({ dataApi, deleteProduct, editProduct }) => {
-    const { name, category, price, isAvailable } = dataApi;
     return (
         <div>
             <table>
@@ -14,22 +13,26 @@ const ProductsList = ({ dataApi, deleteProduct, editProduct }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>{name}</td>
-                        <td>{category}</td>
-                        <td>{price}</td>
-                        <td>{isAvailable.toString()}</td>
-                        <td>
-                            <button onClick={() => editProduct(dataApi)}>
-                                edit
-                            </button>
-                        </td>
-                        <td>
-                            <button onClick={() => deleteProduct(dataApi.id)}>
-                                delete
-                            </button>
-                        </td>
-                    </tr>
+                    {dataApi.map((dataApi, index) => (
+                        <tr key={index}>
+                            <td>{dataApi.name}</td>
+                            <td>{dataApi.category}</td>
+                            <td>{dataApi.price}</td>
+                            <td>{dataApi.isAvailable.toString()}</td>
+                            <td>
+                                <button onClick={() => editProduct(dataApi)}>
+                                    edit
+                                </button>
+                            </td>
+                            <td>
+                                <button
+                                    onClick={() => deleteProduct(dataApi.id)}
+                                >
+                                    delete
+                                </button>
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
