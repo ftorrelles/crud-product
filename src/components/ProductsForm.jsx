@@ -19,36 +19,51 @@ const ProductsForm = ({
     };
     return (
         <div className="PrincipalContainer">
-            <h3 className="textStock">Administar productos</h3>
+            <h2 className="textStock">Administar productos</h2>
             <form className="principalForm" onSubmit={handleSubmit(submit)}>
                 <div className="contentForm">
-                    <label htmlFor="product_name">Name</label>
-                    <input
-                        type="text"
-                        id="product_name"
-                        placeholder="Name product"
-                        {...register("name")}
-                    />
+                    <label htmlFor="product_name">Name of product</label>
+                    <div className="containerInpBtn">
+                        <button className="btInp">
+                            <i className="bx bx-package"></i>
+                        </button>
+                        <input
+                            className="inp"
+                            type="text"
+                            id="product_name"
+                            {...register("name")}
+                        />
+                    </div>
                 </div>
                 <div className="contentForm">
                     <label htmlFor="product_category">Category</label>
-                    <input
-                        type="text"
-                        id="product_category"
-                        placeholder="Category"
-                        {...register("category")}
-                    />
+                    <div className="containerInpBtn">
+                        <button className="btInp">
+                            <i className="bx bxs-category"></i>
+                        </button>
+                        <input
+                            className="inp"
+                            type="text"
+                            id="product_category"
+                            {...register("category")}
+                        />
+                    </div>
                 </div>
                 <div className="contentForm">
                     <label htmlFor="product_price">Price</label>
-                    <input
-                        type="number"
-                        id="product_price"
-                        placeholder="Price"
-                        {...register("price")}
-                    />
+                    <div className="containerInpBtn">
+                        <button className="btInp">
+                            <i className="bx bx-dollar"></i>
+                        </button>
+                        <input
+                            className="inp"
+                            type="number"
+                            id="product_price"
+                            {...register("price")}
+                        />
+                    </div>
                 </div>
-                <div className="contentForm">
+                <div className="checkB">
                     <label htmlFor="isAvailable">is available</label>
                     <input
                         type="checkbox"
@@ -57,7 +72,15 @@ const ProductsForm = ({
                         {...register("isAvailable")}
                     />
                 </div>
-                <button type="submit">send</button>
+                {productSelectToEdit ? (
+                    <button className="btnForm" type="submit">
+                        Modify
+                    </button>
+                ) : (
+                    <button className="btnForm" type="submit">
+                        send
+                    </button>
+                )}
             </form>
         </div>
     );

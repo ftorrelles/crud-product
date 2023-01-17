@@ -9,7 +9,10 @@
 body {
     background-color: #ffffff;
 }
+
+/* --------style form--------- */
 .PrincipalContainer {
+    color: #ffffff;
     background-color: #525e75;
     padding: 2rem 0;
     display: flex;
@@ -24,4 +27,110 @@ body {
     border: none;
     background-color: #ffffff;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 400px;
+}
+.PrincipalContainer .principalForm .contentForm {
+    display: flex;
+    flex-direction: column;
+    color: #525e75;
+}
+
+.PrincipalContainer .principalForm .contentForm .containerInpBtn {
+    display: flex;
+}
+.PrincipalContainer .principalForm .contentForm .containerInpBtn .btInp {
+    border: none;
+    background-color: #525e752f;
+    color: #525e75;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 3px 1px 0 2px;
+}
+.PrincipalContainer .principalForm .contentForm .containerInpBtn .inp {
+    border: none;
+    background-color: #525e752f;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-left: 3px;
+    width: 90%;
+}
+.PrincipalContainer .principalForm .checkB {
+    color: #525e75;
+    display: flex;
+    justify-content: space-evenly;
+}
+.PrincipalContainer .principalForm .btnForm {
+    margin: 0 auto;
+    height: 30px;
+    width: 50%;
+    border: none;
+    background-color: #525e75;
+    color: #ffffff;
+    border-radius: 20px;
+}
+/* --------style table--------- */
+.container-table .table {
+    /*estilo de el cuerpo de nuestra tabla*/
+    background-color: #525e7570;
+    width: 95%;
+    margin: 1rem auto;
+    text-transform: lowercase;
+}
+
+.container-table .table th {
+    background-color: #393d3f;
+    color: #fff;
+    padding: 8px;
+}
+
+.container-table .table td {
+    padding: 4px;
+    width: 100px;
+    height: 24px;
+}
+
+.container-table .table tr:nth-child(odd) {
+    /*para los colores de las filas impares*/
+    background-color: #ffffff;
+}
+
+.container-table .table tr:nth-child(even) {
+    /*para los colores de las filas pares*/
+    background: #525e751e;
+}
+/* style icon table */
+.container-table .table tr .bt_trash {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    color: rgb(189, 35, 35);
+    display: flex;
+}
+.container-table .table tr .bt_edit {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    color: rgb(34, 136, 56);
+    display: flex;
+}
+
+.bt_trash,
+.bt_edit {
+    margin: 0 auto;
+}
+
+/* ---media query---- */
+
+@media (max-width: 850px) {
+    .PrincipalContainer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .PrincipalContainer .principalForm {
+        width: 60%;
+    }
 }

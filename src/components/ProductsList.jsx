@@ -1,7 +1,7 @@
 const ProductsList = ({ dataApi, deleteProduct, editProduct }) => {
     return (
-        <div>
-            <table>
+        <div className="container-table">
+            <table className="table">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -20,15 +20,19 @@ const ProductsList = ({ dataApi, deleteProduct, editProduct }) => {
                             <td>{dataApi.price}</td>
                             <td>{dataApi.isAvailable.toString()}</td>
                             <td>
-                                <button onClick={() => editProduct(dataApi)}>
-                                    edit
+                                <button
+                                    className="bt_edit"
+                                    onClick={() => editProduct(dataApi)}
+                                >
+                                    <i className="bx bx-edit-alt"></i>
                                 </button>
                             </td>
                             <td>
                                 <button
+                                    className="bt_trash"
                                     onClick={() => deleteProduct(dataApi.id)}
                                 >
-                                    delete
+                                    <i className="bx bxs-trash"></i>
                                 </button>
                             </td>
                         </tr>

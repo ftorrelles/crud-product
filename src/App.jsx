@@ -63,15 +63,6 @@ function App() {
                 deleteProduct={(id) => deleteProduct(id)}
                 editProduct={(dataProduct) => editProduct(dataProduct)}
             />
-
-            {/* {dataProducts.map((product, index) => (
-                <ProductsList
-                    dataApi={product}
-                    key={index}
-                    deleteProduct={(id) => deleteProduct(id)}
-                    editProduct={(dataProduct) => editProduct(dataProduct)}
-                />
-            ))} */}
         </div>
     );
 }
