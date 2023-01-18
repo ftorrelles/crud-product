@@ -8,6 +8,20 @@ function App() {
     // estados
     const [dataProducts, setDataProduct] = useState([]);
     const [productToEdit, setProductToEdit] = useState(null);
+    const [isVisibleCreate, setIsVisibleCreate] = useState(false);
+    const [isVisibleUpdate, setIsVisibleUpdate] = useState(false);
+    const [isVisibleDelete, setIsVisibleDelete] = useState(false);
+    //function toggle
+    const toggleCreate = () => {
+        setIsVisibleCreate(!isVisibleCreate);
+    };
+    const toggleUpdate = () => {
+        setIsVisibleUpdate(!isVisibleUpdate);
+    };
+    const toggleDelete = () => {
+        setIsVisibleDelete(!isVisibleDelete);
+    };
+
     //Get data API
     const getDataProducts = () => {
         axios
@@ -23,14 +37,14 @@ function App() {
     const createProduct = (data) => {
         axios
             .post("https://products-crud.academlo.tech/products/", data)
-            .then(() => getDataProducts())
+            .then(() => (getDataProducts(), toggleCreate()))
             .catch((error) => console.error(error));
     };
     // delete Product
     const deleteProduct = (id) => {
         axios
             .delete(`https://products-crud.academlo.tech/products/${id}/`)
-            .then(() => getDataProducts())
+            .then(() => (getDataProducts(), toggleDelete()))
             .catch((error) => console.error(error));
     };
     // edit Product
@@ -43,7 +57,7 @@ function App() {
                 `https://products-crud.academlo.tech/products/${modifiedData.id}/`,
                 modifiedData
             )
-            .then(() => getDataProducts())
+            .then(() => (getDataProducts(), toggleUpdate()))
             .catch((error) => console.error(error));
         setProductToEdit(null);
     };
@@ -63,10 +77,39 @@ function App() {
                 deleteProduct={(id) => deleteProduct(id)}
                 editProduct={(dataProduct) => editProduct(dataProduct)}
             />
-            <div className="popUp create">
-                <i className="bx bxs-badge-check"></i>
-                <h3>¡product created!</h3>
-            </div>
+            {isVisibleCreate && (
+                <div className="container_popUp">
+                    <div className="popUp">
+                        <i className="bx bxs-badge-check"></i>
+                        <h3>¡product created!</h3>
+                        <button onClick={() => toggleCreate()} className="btn">
+                            ok
+                        </button>
+                    </div>
+                </div>
+            )}
+            {isVisibleUpdate && (
+                <div className="container_popUp">
+                    <div className="popUp">
+                        <i className="bx bx-edit"></i>
+                        <h3>¡edited product!</h3>
+                        <button onClick={() => toggleUpdate()} className="btn">
+                            ok
+                        </button>
+                    </div>
+                </div>
+            )}
+            {isVisibleDelete && (
+                <div className="container_popUp">
+                    <div className="popUp">
+                        <i className="bx bxs-trash-alt"></i>
+                        <h3>¡ removed product!</h3>
+                        <button onClick={() => toggleDelete()} className="btn">
+                            ok
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

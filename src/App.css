@@ -139,19 +139,47 @@ body {
     }
 }
 /* ----pop-up---- */
+.container_popUp {
+    background-color: #0d0d0ed8;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 .popUp {
-    display: none;
     position: absolute;
     left: 38%;
     top: 40%;
     background-color: #fff;
     text-align: center;
     width: 300px;
-    height: 150px;
+    height: 180px;
     border-radius: 30px;
-    padding: 30px;
+    padding: 25px;
 }
 .bxs-badge-check {
     color: green;
     font-size: 3rem;
+    margin-bottom: 10px;
+}
+.bx-edit {
+    color: rgb(0, 19, 128);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.bxs-trash-alt {
+    color: rgb(128, 0, 0);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.btn {
+    margin: 20px;
+    width: 40px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(201, 31, 31);
+    color: #fff;
 }
