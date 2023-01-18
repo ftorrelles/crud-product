@@ -72,6 +72,10 @@ body {
     border-radius: 20px;
 }
 /* --------style table--------- */
+.container-table {
+    overflow-x: scroll;
+}
+
 .container-table .table {
     /*estilo de el cuerpo de nuestra tabla*/
     background-color: #525e7570;
@@ -133,4 +137,21 @@ body {
     .PrincipalContainer .principalForm {
         width: 60%;
     }
+}
+/* ----pop-up---- */
+.popUp {
+    display: none;
+    position: absolute;
+    left: 38%;
+    top: 40%;
+    background-color: #fff;
+    text-align: center;
+    width: 300px;
+    height: 150px;
+    border-radius: 30px;
+    padding: 30px;
+}
+.bxs-badge-check {
+    color: green;
+    font-size: 3rem;
 }

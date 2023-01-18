@@ -63,6 +63,10 @@ function App() {
                 deleteProduct={(id) => deleteProduct(id)}
                 editProduct={(dataProduct) => editProduct(dataProduct)}
             />
+            <div className="popUp create">
+                <i className="bx bxs-badge-check"></i>
+                <h3>¡product created!</h3>
+            </div>
         </div>
     );
 }
